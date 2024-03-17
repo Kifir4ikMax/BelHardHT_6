@@ -8,13 +8,11 @@
 
 
 #Вывод строки по двум ключевым условиям.
-
 some_string = input("Введите предложение: ")
 print(f"{some_string}!!!") if len(some_string) > 10 else print(some_string[1])
 
 
 # Или через создание переменной / изменению основной переменной.
-
 some_string = input("Введите предложение: ")
 if len(some_string) > 10:
     some_string += "!!!"
