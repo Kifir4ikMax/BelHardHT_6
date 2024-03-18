@@ -20,29 +20,35 @@ while True:
     else:
         break
     
+    
+# Округляем копейки 100 - 999.   
+if len(coins_income) == 3:
+    rubles_income = str(int(coins_income[0])*100 + int(rubles_income))
+    coins_income = coins_income[1:]
+
+
+# Округляем копейки 1000 - 9999.
+if len(coins_income) == 4:
+    rubles_income = str(int(coins_income[0:2])*100 + int(rubles_income))
+    coins_income = coins_income[2:]  
+    
+    
 # Создаём условие для проверки окончаний выводимых слов в зависимости от ввода. Используем списки и срезы. Сначала "рубли".
-list_1 = ['0', '1', '5', '6', '7', '8', '9']
-list_2 = ['2', '3', '4']
-list_3 = ['12', '13', '14']
-list_4 = ['21', '31', '41', '51', '61', '71', '81', '91', '01']
-if rubles_income[-1] in list_1:
+list_1, list_2, list_3  = ['0', '1', '5', '6', '7', '8', '9', '12', '13', '14'], ['2', '3', '4'], ['21', '31', '41', '51', '61', '71', '81', '91', '01']
+if rubles_income[-1] in list_1 or rubles_income[-2:] in list_1:
     quote1 = "рублей"
 if rubles_income[-1] in list_2:
     quote1 = "рубля"
-if rubles_income[-2:] in list_3:
-    quote1 = "рублей"
-if rubles_income == '1' or rubles_income[-2:] in list_4:
+if rubles_income == '1' or rubles_income[-2:] in list_3:
     quote1 = "рубль"
 
 
 # Теперь для "копеек".
-if coins_income[-1] in list_1:
+if coins_income[-1] in list_1 or coins_income[-2:] in list_1:
     quote2 = "копеек"  
 if coins_income[-1] in list_2:
-    quote2 = "копейки" 
-if coins_income[-2:] in list_3:
-    quote2 = "копеек"     
-if coins_income == '1' or coins_income[-2:] in list_4:
+    quote2 = "копейки"
+if coins_income == '1' or coins_income[-2:] in list_3:
     quote2 = "копейка"    
 
 
