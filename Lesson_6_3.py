@@ -23,13 +23,13 @@ while True:
     
 # Округляем копейки 100 - 999.   
 if len(coins_income) == 3:
-    rubles_income = str(int(coins_income[0])*100 + int(rubles_income))
+    rubles_income = str(int(coins_income[0]) + int(rubles_income))
     coins_income = coins_income[1:]
 
 
 # Округляем копейки 1000 - 9999.
 if len(coins_income) == 4:
-    rubles_income = str(int(coins_income[0:2])*100 + int(rubles_income))
+    rubles_income = str(int(coins_income[0:2]) + int(rubles_income))
     coins_income = coins_income[2:]  
     
     
